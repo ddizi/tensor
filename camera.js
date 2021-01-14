@@ -109,3 +109,8 @@ function scrollFit() {
   var location = document.querySelector("#result").offsetTop;
   window.scrollTo({top:location, behavior:'smooth'});
 }
+
+function testScroll() {
+  $('html, body').animate({ scrollTop: $("#logo").offset().top }, 400);
+}
+
