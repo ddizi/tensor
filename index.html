@@ -26,7 +26,12 @@
 			<button type="button" class="m-4 btn btn-warning btn-lg position-relative top-50 start-0" onclick="testJudgeImage()">예시이미지 판단</button>
 		</div>
 		<div id="testResult"></div>
-
+		
+		<!-- 스피너 -->
+		<div style="display:none" class="m-4 spinner-border text-primary" id="spinner" role="status"> 
+        	<span class="sr-only">Loading...</span> 
+		</div>
+		
 		<div>
 			<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
 			<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
