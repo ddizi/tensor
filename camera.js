@@ -39,19 +39,44 @@ function LoadImg(value) {
     }
 }
 
-function judgeImage() {
+function testJudgeImage() {
     console.log("judgeImage function start");
-    // const img = document.getElementById('localImg');
-    const img = document.getElementById('photoImg');
-    document.getElementById("tensorflow").innerHTML = `
-                        <h3>script access</h3>
-                     `;
+    const img = document.getElementById('localImg');
+    // const img = document.getElementById('photoImg');
+    // document.getElementById("tensorflow").innerHTML = `
+    //                     <h3>script access</h3>
+    //                  `;
 // Load the model.
     mobilenet.load().then(model => {
 // Classify the image.
         model.classify(img).then(predictions => {
             console.log('Predictions: ');
-            console.log(predictions);
+            console.log(predictions[0].className);
+            var result = predictions[0].className;
+            document.getElementById("testResult").innerHTML = `
+            <h3>인공지능의 판단결과 해당 이미지는 " ${result} " 입니다.</h3>
+         `;            
         });
     });
+}
+
+function judgeImage() {
+  console.log("judgeImage function start");
+  // const img = document.getElementById('localImg');
+  const img = document.getElementById('photoImg');
+  // document.getElementById("tensorflow").innerHTML = `
+  //                     <h3>script access</h3>
+  //                  `;
+// Load the model.
+  mobilenet.load().then(model => {
+// Classify the image.
+      model.classify(img).then(predictions => {
+          console.log('Predictions: ');
+          console.log(predictions[0].className);
+          var result = predictions[0].className;
+          document.getElementById("result").innerHTML = `
+          <h3>인공지능의 판단결과 해당 이미지는 " ${result} " 입니다.</h3>
+       `;            
+      });
+  });
 }

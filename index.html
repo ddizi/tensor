@@ -5,22 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>기섭AI</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-	<!-- <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OwW3v8BH3CP3aAvKPODpS8RCnWjtBsPIuw&usqp=CAU"></img> -->
-	<img id="localImg" src="images.jpg"></img>
-	<img src="" id="photoImg" width="50%" height="30%" style="display:none;">
-    <div id="app">
+
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">
+			<img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-top">
+			TEST AI by RuRoo
+		  </a>
 		</div>
-    <div id="tensorflow">
-	</div>		
-	<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
-	<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
+	</nav>
+	<h4 class="m-4">카메라버튼을 눌러 사진을 선택해서 판단버튼을 눌러주세요.</h4>
+	<img class="m-2 d-block" src="tensor.jpg" class="img-fluid" alt="tensor">	
+	<!-- <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OwW3v8BH3CP3aAvKPODpS8RCnWjtBsPIuw&usqp=CAU"></img> -->
+	<img class="m-4 d-block" id="localImg" src="persianCat.jpg".jpg"></img>
+
+	<div>
+		<button type="button" class="m-4 btn btn-warning btn-lg position-relative top-50 start-0" onclick="testJudgeImage()">예시이미지 판단</button>
+	</div>
+	<div id="testResult"></div>
+
+	<div>
+		<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
+		<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
+	</div>
+
 	<br>
-	<input type="button" value="카메라">
+
+	<div>
+		<input class="m-4 position-relative top-50 start-0 btn btn-danger btn-lg" type="button" value="카메라">
+	</div>
+
+	<img src="" class="m-4" id="photoImg" width="50%" height="30%" style="display:none;">	
 	<br>
+	<div>
+		<button type="button" class="m-4 btn btn-primary btn-lg position-relative top-50 start-0" onclick="judgeImage()">선택이미지 판단</button>
+	</div>
 	<div id="result"></div>
-	<button onclick="judgeImage()">판단</button>
+
 	<script src="camera.js"> </script>	
     <!-- <script src="src/index.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>
