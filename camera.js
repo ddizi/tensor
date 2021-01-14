@@ -1,4 +1,3 @@
-//changeSpinner("N");
 
 window.onload = function() {
     // 카메라 버튼
@@ -43,7 +42,7 @@ function LoadImg(value) {
 
 function testJudgeImage() {
     document.getElementById("testResult").innerHTML = '';  
-    changeSpinner("Y");
+    changeSpinner("Y","spinner");
     console.log("judgeImage function start");
     const img = document.getElementById('localImg');
     // const img = document.getElementById('photoImg');
@@ -60,7 +59,7 @@ function testJudgeImage() {
             document.getElementById("testResult").innerHTML = `
             <h3>인공지능의 판단결과 해당 이미지는 " ${result} " 입니다.</h3>
             `;
-            changeSpinner("N");            
+            changeSpinner("N","spinner");            
         });
     });
  
@@ -68,7 +67,7 @@ function testJudgeImage() {
 
 function judgeImage() {
   document.getElementById("result").innerHTML = '';  
-  changeSpinner("Y");
+  changeSpinner("Y","spinner2");
   console.log("judgeImage function start");
   // const img = document.getElementById('localImg');
   const img = document.getElementById('photoImg');
@@ -85,21 +84,21 @@ function judgeImage() {
           document.getElementById("result").innerHTML = `
           <h3>인공지능의 판단결과 해당 이미지는 " ${result} " 입니다.</h3>
          `;
-         changeSpinner("N");              
+         changeSpinner("N","spinner2");              
       });
   });
 }
 
 // Function to hide the Spinner 
-function changeSpinner(display) { 
+function changeSpinner(display,id) { 
   
   console.log("display value : " + display);
   if("Y"===display) {
-    document.getElementById('spinner') 
-    .style.display = 'block';    
+    document.getElementById(id) 
+    .style.display = 'inline';    
   }
   else {
-    document.getElementById('spinner') 
+    document.getElementById(id) 
           .style.display = 'none';
   } 
 }  

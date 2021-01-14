@@ -13,42 +13,55 @@
 			<div class="container-fluid">
 			<a class="navbar-brand" href="#">
 				<img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-top">
-				TEST AI by RuRoo
+				TEST AI by RuRoo Using Tensorflow.js
 			</a>
 			</div>
 		</nav>
-		<h4 class="m-4">카메라버튼을 눌러 사진을 선택해서 판단버튼을 눌러주세요.</h4>
-		<img class="rounded img-fluid d-block" src="tensor.jpg" class="img-fluid" alt="tensor">	
-		<!-- <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OwW3v8BH3CP3aAvKPODpS8RCnWjtBsPIuw&usqp=CAU"></img> -->
-		<img class="d-block img-fluid rounded" id="localImg" src="persianCat.jpg".jpg"></img>
 
-		<div>
-			<button type="button" class="m-4 btn btn-warning btn-lg position-relative top-50 start-0" onclick="testJudgeImage()">예시이미지 판단</button>
-		</div>
-		<div id="testResult"></div>
-		
-		<!-- 스피너 -->
-		<div style="display:none" class="m-4 spinner-border text-primary" id="spinner" role="status"> 
-        	<span class="sr-only">Loading...</span> 
-		</div>
-		
-		<div>
-			<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
-			<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
-		</div>
+		<article style="border-bottom: 1px solid gray;" >
+			<img class="mt-4 rounded img-fluid d-block" src="tensor.jpg" class="img-fluid" alt="tensor">	
+			<!-- <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OwW3v8BH3CP3aAvKPODpS8RCnWjtBsPIuw&usqp=CAU"></img> -->
+			<img class="d-block img-fluid rounded" id="localImg" src="persianCat.jpg"></img>
 
-		<br>
+			<div>
+				<button type="button" class="m-4 btn btn-warning btn-lg position-relative top-50 start-0" onclick="testJudgeImage()">예시이미지 판단</button>
+				<!-- 스피너 -->
+				<button  style="display:none"  class="btn btn-primary"  id="spinner" type="button" disabled>
+					<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					Loading...
+				</button>
+			</div>
+			<div class='mb-4' id="testResult"></div>
+		</article>
 
-		<div>
-			<input class="m-4 position-relative top-50 start-0 btn btn-danger btn-lg" type="button" value="카메라">
-		</div>
+		<article>
+			<div class="fs-4 m-4 badge bg-info text-wrap" style="width: 90%;">
+				카메라버튼을 누른후 판단버튼을 눌러주세요.
+			</div>
 
-		<img src="" class="m-4 d-block img-fluid" id="photoImg" width="50%" height="30%" style="display:none;">	
-		<br>
-		<div>
-			<button type="button" class="m-4 btn btn-primary btn-lg position-relative top-50 start-0" onclick="judgeImage()">선택이미지 판단</button>
-		</div>
-		<div id="result"></div>
+			<div>
+				<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
+				<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
+			</div>
+
+			<br>
+
+			<div>
+				<input class="ms-4 position-relative top-50 start-0 btn btn-danger btn-lg" type="button" value="카메라">
+			</div>
+
+			<img src="" class="m-4 d-block img-fluid" id="photoImg" width="50%" height="30%" style="display:none;">	
+			<br>
+			<div>
+				<button type="button" class="m-4 btn btn-primary btn-lg position-relative top-50 start-0" onclick="judgeImage()">선택이미지 판단</button>
+				<!-- 스피너 -->
+				<button  style="display:none"  class="btn btn-primary"  id="spinner2" type="button" disabled>
+					<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					Loading...
+				</button>
+			</div>
+			<div id="result"></div>
+		</article>
 	</div>
 
 	<script src="camera.js"> </script>	
