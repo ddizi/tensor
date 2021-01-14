@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>기섭AI</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+	<!-- <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OwW3v8BH3CP3aAvKPODpS8RCnWjtBsPIuw&usqp=CAU"></img> -->
+	<img id="localImg" src="images.jpg"></img>
+	<img src="" id="photoImg" width="50%" height="30%" style="display:none;">
+    <div id="app">
+		</div>
+    <div id="tensorflow">
+	</div>		
+	<input type="file" name="photoFile" id="photoFile" accept="image/*" capture="camera" style="display:none;">
+	<!-- <input type="file" name="image" accept="image/*" capture="environment"> -->
+	<br>
+	<input type="button" value="카메라">
+	<br>
+	<div id="result"></div>
+	<button onclick="judgeImage()">판단</button>
+	<script src="camera.js"> </script>	
+    <!-- <script src="src/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
+	<script>
+		// judgeImage();
+		
+	// 	console.log("judgeImage function start");
+	// 	const img = document.getElementById('localImg');
+	// 	document.getElementById("tensorflow").innerHTML = `
+	// 						<h3>script access</h3>
+	// 					`;
+	// // Load the model.
+	// 	mobilenet.load().then(model => {
+	// // Classify the image.
+	// 		model.classify(img).then(predictions => {
+	// 			console.log('Predictions: ');
+	// 			console.log(predictions);
+	// 		});
+	// 	});
+
+	</script>
+</body>
+</html>
