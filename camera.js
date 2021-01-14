@@ -66,6 +66,7 @@ function testJudgeImage() {
 }
 
 function judgeImage() {
+
   document.getElementById("result").innerHTML = '';  
   changeSpinner("Y","spinner2");
   console.log("judgeImage function start");
@@ -84,7 +85,8 @@ function judgeImage() {
           document.getElementById("result").innerHTML = `
           <h3>인공지능의 판단결과 해당 이미지는 " ${result} " 입니다.</h3>
          `;
-         changeSpinner("N","spinner2");              
+         changeSpinner("N","spinner2");     
+         scrollFit();         
       });
   });
 }
@@ -100,5 +102,10 @@ function changeSpinner(display,id) {
   else {
     document.getElementById(id) 
           .style.display = 'none';
-  } 
-}  
+  }
+}
+
+function scrollFit() {
+  var location = document.querySelector("#result").offsetTop;
+  window.scrollTo({top:location, behavior:'smooth'});
+}
